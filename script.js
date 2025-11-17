@@ -26,6 +26,13 @@ function addQuoteAuthor(text, author) {
   //et je la range
 }
 
+let countAdd = 0;
+function quoteCount() {
+  const count = document.getElementById("count");
+  countAdd++;
+  count.innerHTML = countAdd;
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // empêche la page de se recharger
 
@@ -36,7 +43,7 @@ form.addEventListener("submit", (event) => {
   if (!text || !author) return;
 
   addQuoteAuthor(text, author);
-
+  quoteCount();
   // vider les champs du formulaire
   form.reset();
 });
