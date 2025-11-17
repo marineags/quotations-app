@@ -9,17 +9,25 @@
   <body>
     <h1>Mes citations</h1>
     <h2>Gestionnaire de citations en ligne</h2>
-    <h3>
+    <h3 id="counter">0 citations</h3>
+    <hr />
+
+    <form id="form" action="" method="get">
+      <label>Saisissez votre citation:</label>
+      <input id="addquote" type="text" />
       <br />
-      <form id="form" action="" method="get">
-        <label>saisissez votre citation:</label>
-        <input id="quote" type="text" />
-        <br />
-        <label>saisissez votre auteur :</label>
-        <input id="author" type="text" />
-        <button></button>
-      </form>
-    </h3>
+      <label>Saisissez votre auteur :</label>
+      <input id="author" type="text" />
+      <button></button>
+    </form>
+
+    <div id="quote-list">
+      <div class="quote">
+        <p>Citation : "On ne naît pas femme, on le devient."</p>
+        <p>Autrice : Simone de Beauvoir</p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
