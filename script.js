@@ -15,6 +15,10 @@ function addQuoteAuthor(text, author) {
   const quoteContainer = document.createElement("div");
   quoteContainer.classList.add("quote");
   //cree une nouvelle div
+  const pin = document.createElement("img");
+  pin.src = "images/pin.png";
+  pin.classList.add("pin");
+  quoteContainer.appendChild(pin);
 
   quoteContainer.appendChild(quoteText);
   quoteContainer.appendChild(quoteAuthor);
