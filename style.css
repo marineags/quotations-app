@@ -1,0 +1,124 @@
+body {
+  padding: 0%;
+  margin: auto;
+  min-height: auto;
+  background-color: rgb(65, 58, 49);
+}
+
+h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  margin: 3%;
+}
+
+h2 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+}
+
+p {
+  color: white;
+}
+
+.header {
+  background-color: rgba(51, 46, 39, 0.5);
+  padding: 1%;
+}
+
+#form {
+  background-color: rgba(51, 46, 39, 0.5);
+  padding: 2%;
+  margin: 5% auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 60%; /* rétrécit le bloc */
+  max-width: 900px; /* limite sur grands écrans */
+  min-width: 350px;
+}
+
+input {
+  width: 80%;
+  border-radius: 20px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* 👉 pousse le bouton à droite */
+  width: 95%; /* pour que la ligne fasse toute la largeur du form */
+  padding: 10px;
+}
+
+button {
+  height: 25px;
+  border-radius: 15px;
+  align-self: flex-end; /* 👉 le bouton va à droite dans #form */
+  width: auto; /* optionnel : pour éviter un bouton rikiki de 10% */
+  padding: 5px 15px; /* optionnel : pour l’esthétique */
+}
+
+label {
+  color: white;
+  font-size: 20px;
+  margin: 2%;
+}
+
+#quote-list {
+  width: 60%;
+  max-width: 900px;
+  margin: 0 auto 50px auto; /* centre la zone des citations */
+}
+
+/* 🚀 AJOUT pour afficher les bulles */
+.quote {
+  background-color: rgba(32, 31, 35, 0.8);
+  color: white;
+  padding: 15px 20px;
+  margin: 15px auto;
+  border-radius: 20px;
+  width: 60%;
+  position: relative;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 🚀 AJOUT pour afficher les bulles */
+.quote {
+  background-color: rgba(32, 31, 35, 0.8);
+  color: white;
+  padding: 15px 20px;
+  margin: 15px auto;
+  border-radius: 20px;
+  width: 60%;
+  position: relative;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.simoneDeBeauvoir {
+  height: 300px;
+  border-radius: 20px;
+}
+
+.simone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5%;
+  gap: 100px;
+  align-items: center;
+}
+
+.simone p {
+  text-align: center;
+}
+
+.carnet-emoji {
+  position: absolute;
+  top: 140px; /* ajuste comme tu veux */
+  right: 9%;
+  width: 190px;
+  z-index: 10;
+  pointer-events: none; /* important pour ne pas gêner les clics */
+}

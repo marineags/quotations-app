@@ -7,11 +7,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Mes citations</h1>
-    <h2>Gestionnaire de citations en ligne</h2>
-    <h3 id="count">0</h3>
+    <header class="header">
+      <h1>Mes citations</h1>
+      <h2>Gestionnaire de citations en ligne</h2>
+    </header>
+    <img src="images/carnet.png" class="carnet-emoji" alt="emoji carnet" />
 
-    <hr />
+    <div class="simone">
+      <img
+        class="simoneDeBeauvoir"
+        src="images/Simone-de-Beauvoir.jpeg"
+        alt="photo de sinome de beauvoir"
+      />
+      <p>
+        Citation : "On ne naît pas femme, on le devient."<br />
+        Autrice : Simone de Beauvoir
+      </p>
+    </div>
 
     <form id="form" action="" method="get">
       <label>Saisissez votre citation:</label>
@@ -19,16 +31,14 @@
       <br />
       <label>Saisissez votre auteur :</label>
       <input id="author" type="text" />
-      <button id="button"></button>
-    </form>
-
-    <div id="quote-list">
-      <div class="quoteAuthor">
-        <p>Citation : "On ne naît pas femme, on le devient."</p>
-        <p>Autrice : Simone de Beauvoir</p>
+      <div class="button-container">
+        <button id="button" type="submit">Ajouter</button>
       </div>
+    </form>
+    <div id="quote-list">
+      <div class="quoteAuthor"></div>
     </div>
-
+    <h3 id="count">0</h3>
     <script src="script.js"></script>
   </body>
 </html>
