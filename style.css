@@ -83,6 +83,11 @@ label {
   width: 60%;
   position: relative;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre verticalement */
+  align-items: center; /* centre horizontalement */
+  text-align: center; /* centre le texte */
 }
 
 .simoneDeBeauvoir {
@@ -114,13 +119,14 @@ label {
 
 .quote {
   position: relative; /* obligatoire pour le repère */
+  margin-bottom: 40px;
 }
 
 .pin {
   position: absolute;
-  top: -22px;
-  right: 16px;
-  width: 45px;
+  top: -12px;
+  right: 510px;
+  width: 25px;
   transform: rotate(-15deg);
   pointer-events: none;
 }
@@ -137,4 +143,20 @@ label {
   font-weight: bold;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
   z-index: 999;
+  height: 20px;
+}
+.delete-btn {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
 }

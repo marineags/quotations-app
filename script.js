@@ -20,6 +20,12 @@ function addQuoteAuthor(text, author) {
   pin.classList.add("pin");
   quoteContainer.appendChild(pin);
 
+  // Bouton de suppression
+  const deleteBtn = document.createElement("span");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.textContent = "🗑️";
+  quoteContainer.appendChild(deleteBtn);
+
   quoteContainer.appendChild(quoteText);
   quoteContainer.appendChild(quoteAuthor);
   //je range mes p dans la div
@@ -37,6 +43,21 @@ function quoteCount() {
   count.innerHTML = countAdd;
 }
 
+function saveQuote(text, author) {
+  const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+  quotes.push({ text, author });
+  localStorage.setItem("quotes", JSON.stringify(quotes));
+}
+
+// 📥 Recharge toutes les citations quand la page s'ouvre
+function loadQuotesFromStorage() {
+  const quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+  quotes.forEach((quote) => {
+    addQuoteAuthor(quote.text, quote.author);
+    quoteCount();
+  });
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // empêche la page de se recharger
 
@@ -47,7 +68,36 @@ form.addEventListener("submit", (event) => {
   if (!text || !author) return;
 
   addQuoteAuthor(text, author);
+  saveQuote(text, author);
   quoteCount();
   // vider les champs du formulaire
   form.reset();
 });
+
+// 🗑️ Quand on clique sur la poubelle d'une citation
+document
+  .getElementById("quote-list")
+  .addEventListener("click", function (event) {
+    // On vérifie que l'élément cliqué est bien la poubelle
+    if (event.target.classList.contains("delete-btn")) {
+      const quoteDiv = event.target.parentElement; // la div .quote
+
+      // Récupère le texte et l'auteur de cette citation
+      const text = quoteDiv.querySelector(".text").textContent;
+      const author = quoteDiv.querySelector(".author").textContent;
+
+      // 1. Supprime du DOM
+      quoteDiv.remove();
+
+      // 2. Supprime du localStorage
+      let quotes = JSON.parse(localStorage.getItem("quotes")) || [];
+      quotes = quotes.filter((q) => !(q.text === text && q.author === author));
+      localStorage.setItem("quotes", JSON.stringify(quotes));
+
+      // 3. Met à jour le compteur
+      countAdd--;
+      document.getElementById("count").textContent = countAdd;
+    }
+  });
+
+loadQuotesFromStorage();
